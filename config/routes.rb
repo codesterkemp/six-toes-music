@@ -1,4 +1,7 @@
 Sixtoes::Application.routes.draw do
+  resources :contacts
+
+
   get "pages/home"
   root :to => 'pages#home'
 
