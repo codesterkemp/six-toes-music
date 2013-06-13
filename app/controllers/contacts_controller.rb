@@ -33,12 +33,7 @@ class ContactsController < ApplicationController
   end
 
   # GET /contacts/1/edit
-  def edit
-    @contact = Contact.find(params[:id])
-  end
 
-  # POST /contacts
-  # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
     if @contact.save
@@ -46,37 +41,16 @@ class ContactsController < ApplicationController
       #format.html {redirect_to @contact, notice: "Sent 6Toes message successfully." }
       #format.json { render json: @contact, status: :created, loction: @contact }
       ContactMailer.ask_matt(@contact).deliver
-      render :new
+      render :index
     else
-      render :new
+      render :index
     end
   end
 
   # PUT /contacts/1
   # PUT /contacts/1.json
-  def update
-    @contact = Contact.find(params[:id])
-
-    respond_to do |format|
-      if @contact.update_attributes(params[:contact])
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /contacts/1
   # DELETE /contacts/1.json
-  def destroy
-    @contact = Contact.find(params[:id])
-    @contact.destroy
-
-    respond_to do |format|
-      format.html { redirect_to contacts_url }
-      format.json { head :no_content }
-    end
-  end
+ 
 end
