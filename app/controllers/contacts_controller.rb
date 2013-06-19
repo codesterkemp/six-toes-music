@@ -41,7 +41,7 @@ class ContactsController < ApplicationController
       #format.html {redirect_to @contact, notice: "Sent 6Toes message successfully." }
       #format.json { render json: @contact, status: :created, loction: @contact }
       ContactMailer.ask_matt(@contact).deliver
-      render :index
+      render :show
     else
       render :index
     end
