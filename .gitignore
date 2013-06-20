@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore publish automaters
-/.automater
+/*.automater.bash
