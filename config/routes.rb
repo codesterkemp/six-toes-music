@@ -1,10 +1,9 @@
 Sixtoes::Application.routes.draw do
   resources :contacts
 
-
-  get "pages/home"
   root :to => 'pages#home'
-  match "contacts" => "contacts#index"
+  get "/pages/home"  
+  match "contacts", to: "contacts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
