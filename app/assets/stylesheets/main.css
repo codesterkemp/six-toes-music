@@ -72,6 +72,22 @@ div.block-content {
 
 .sub-column-1 { clear: both }
 
+div.block-content-2 {
+	display: block;
+	float: right;
+	width: 100%;
+	height: auto }
+
+.block-fixed-height div.block-content,body.visual-editor-iframe-grid div.block-content { height: 100% }
+
+.row { float:left;width: 100% }
+
+.column { float: right }
+
+.column-1.grid-left-0 { margin-left: 0 !important }
+
+.sub-column-1 { clear: both }
+
 div.wrapper-no-blocks div.entry-content { margin:40px 0 !important;text-align: center }
 
 .block-type-header .banner { display: block }
